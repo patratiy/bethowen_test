@@ -23,9 +23,9 @@ public class LoginTestClass {
         $("#new-auth").find(".new-auth-pswd").setValue("405834089");
 
         $("#new-auth").find(".new-auth-button-action").click();
-        // проверяем что сообщение не появилось
+        // проверяем что сообщение появилось
         $(".new-auth-new-reg-error").waitWhile(hidden, 2000).find("div").shouldHave(text("Неверные телефон/email или пароль"));
-        // удаляем лишний симпол
+        // удаляем лишний символ
         $("#new-auth").find(".new-auth-pswd").sendKeys("\b");
         //
         $("#new-auth").find(".new-auth-button-action").click();
