@@ -12,12 +12,13 @@ public class LoginTestClass {
     @Test
     public void authEmail() {
         timeout = 500;
+        pageLoadStrategy = "none";
 
         open("https://bethowen.ru/");
 
-        $$("[data-name='auth']").get(0).waitUntil(visible, 5000).click();
-        $("#new-reg-auth").find(".js_show_new-auth").click();
-        $("#new-auth").find(".new-auth-login").setValue("hkh-4-dev@yandex.ru");
+        $$("[data-name='auth']").get(0).waitWhile(hidden, 7000).click();
+        $("#new-reg-auth").find(".js_show_new-auth").waitWhile(hidden, 3000).click();
+        $("#new-auth").find(".new-auth-login").setValue("nkh-4-dev@yandex.ru");
         // умышлено неверный пароль
         $("#new-auth").find(".new-auth-pswd").setValue("405834089");
 
